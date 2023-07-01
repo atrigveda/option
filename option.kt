@@ -1,10 +1,15 @@
-import java.math.BigInteger
+import java.math.*
 import java.util.*
 import index.sc
 
 internal object index {
     var sc = Scanner(System.`in`)
 }
+
+fun main(args: Array<String>){
+    option.main()
+}
+
 
 internal object option{
     @JvmStatic
