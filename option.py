@@ -1,27 +1,29 @@
 import sys
 import os
 import math
+
+
 __name__ == "__main__"
 
-class ScannerMain(float) :
-    def scan():
-        n = input("")
-        return n
-    
 
-class sum(ScannerMain):
+class index(float) :
+    def scan():
+        sc = input("")
+        return sc    
+
+class sum(index):
 
  def main():
   while(True):
     print("enter numbers which you want to add :~~")
-    a = ScannerMain.scan()
+    a = index.scan()
     print("+")
-    b = ScannerMain.scan()
+    b = index.scan()
     c = float(a) + float(b)
     print("=   " , c)
     
     print("do you want to quit or you want to go to the menu(if yes enter 'y' else enter 'n' )" + "(for menu enter m)")
-    str = ScannerMain.scan()
+    str = index.scan()
     if str == "y":
       print("Bye :)")
       exit(0)
@@ -40,19 +42,19 @@ class sum(ScannerMain):
         exit(0)
 
 
-class diff(ScannerMain):
+class diff(index):
 
  def main():
   while(True):
     print("enter numbers which you want to subtract :~~")
-    a = ScannerMain.scan()
+    a = index.scan()
     print("-")
-    b = ScannerMain.scan()
+    b = index.scan()
     c = float(a) - float(b)
     print("=   " , c)
     
     print("do you want to quit or you want to go to the menu(if yes enter 'y' else enter 'n' )" + "(for menu enter m)")
-    str = ScannerMain.scan()
+    str = index.scan()
     if str == "y":
       exit(0)
 
@@ -69,19 +71,19 @@ class diff(ScannerMain):
         exit(0)
 
 
-class divide(ScannerMain):
+class divide(index):
 
  def main():
   while(True):
     print("enter the two want to divide billow :~~")
-    a = ScannerMain.scan()
+    a = index.scan()
     print("/")
-    b = ScannerMain.scan()
+    b = index.scan()
     c = float(a) / float(b)
     print("=   " , c)
     
     print("do you want to quit or you want to go to the menu(if yes enter 'y' else enter 'n' )" + "(for menu enter m)")
-    str = ScannerMain.scan()
+    str = index.scan()
     if str == "y":
       print("Bye :)")
       exit(0)
@@ -100,19 +102,19 @@ class divide(ScannerMain):
         exit(0)
 
 
-class multiply(ScannerMain):
+class multiply(index):
 
  def main():
   while(True):
     print("enter the number want to multiply billow :~~")
-    a = ScannerMain.scan()
+    a = index.scan()
     print("x")
-    b = ScannerMain.scan()
+    b = index.scan()
     c = float(a) * float(b)
     print("=   " , c)
     
     print("do you want to quit or you want to go to the menu(if yes enter 'y' else enter 'n' )" + "(for menu enter m)")
-    str = ScannerMain.scan()
+    str = index.scan()
     if str == "y":
       print("Bye :)")
       exit(0)
@@ -131,19 +133,19 @@ class multiply(ScannerMain):
         exit(0)
 
 
-class evenOdd(ScannerMain):
+class evenOdd(index):
 
  def main():
   while(True):
     print("enter the number you want to check :~~ ")
-    a = int(ScannerMain.scan())
+    a = int(index.scan())
     if (a % 2) == 0 :
        print(a, " is even")
     else :
        print(a, " is odd")
     
     print("do you want to quit or you want to go to the menu(if yes enter 'y' else enter 'n' )" + "(for menu enter m)")
-    str = ScannerMain.scan()
+    str = index.scan()
     if str == "y":
       print("Bye :)")
       exit(0)
@@ -162,16 +164,16 @@ class evenOdd(ScannerMain):
         exit(0)
 
 
-class factorial(ScannerMain):
+class factorial(index):
 
  def main():
   while(True):
     print("enter the number want to calculate the factorial of :~~")
-    a = int(ScannerMain.scan())
+    a = int(index.scan())
     facto = math.factorial(a)
     print("factorial of ",a,"=  " , facto)
     print("do you want to quit or you want to go to the menu(if yes enter 'y' else enter 'n' )" + "(for menu enter m)")
-    str = ScannerMain.scan()
+    str = index.scan()
     if str == "y":
       print("Bye :)")
       exit(0)
@@ -190,7 +192,7 @@ class factorial(ScannerMain):
         exit(0)
 
 
-class option(ScannerMain):
+class option(index):
  
  def option():
     print("lets do some calculations")
@@ -205,15 +207,17 @@ class option(ScannerMain):
     print("6- To calculate factorial")
     print("enter any number listed above to continue :)")
 
-    a = ScannerMain.scan()
+    a = index.scan()
 
     while(True):
         if a == "0":
             print("Bye :) ")
             exit(0)
+            
         elif a == "1":
              print("ok, good choice. Lets do some additions :)")
              exec(sum.main())
+
             
         elif a == "2":
              print("ok, good choice lets find some difference  ;) ")

@@ -36,7 +36,11 @@ internal object option{
 
         // Menu operations .
         while (true) {
-            if (i == "1") {
+            if(i == "0") {
+                println("Bye :)")
+                System.exit(0)
+                break
+            } else if(i == "1") {
                 println("ok, good choice. Lets do some additions :)")
                 try {
                     plus.main()
@@ -44,7 +48,7 @@ internal object option{
                 } catch (e: Exception) {
                     e.printStackTrace()
                 }
-            } else if (i == "2") {
+            } else if(i == "2") {
                 println("ok, good choice lets find some difference  ;) ")
                 try {
                     minus.main()
@@ -52,7 +56,7 @@ internal object option{
                 } catch (e: Exception) {
                     e.printStackTrace()
                 }
-            } else if (i == "3") {
+            } else if(i == "3") {
                 println("ok, good choice lets do some divisions  :]")
                 try {
                     divide.main()
@@ -60,7 +64,7 @@ internal object option{
                 } catch (e: Exception) {
                     e.printStackTrace()
                 }
-            } else if (i == "4") {
+            } else if(i == "4") {
                 println("ok, good choice lets do some multiplication :{)")
                 try {
                     multiply.main()
@@ -68,11 +72,7 @@ internal object option{
                 } catch (e: Exception) {
                     e.printStackTrace()
                 }
-            } else if (i == "0") {
-                println("Bye :)")
-                System.exit(0)
-                break
-            } else if (i == "5") {
+            }  else if(i == "5") {
                 println("lets check even odd")
                 try {
                     evenOdd.main()
@@ -80,7 +80,7 @@ internal object option{
                 } catch (e: Exception) {
                     e.printStackTrace()
                 }
-            } else if (i == "6") {
+            } else if(i == "6") {
                 println("Factorials ! cool ! ")
                 try {
                     factorial.main()
@@ -93,36 +93,6 @@ internal object option{
                 println("Invalid input   :(")
                 println("please try again :)")
                 main()
-            }
-        }
-    }
-}
-
-internal object minus{
-    // Minus class numbers
-    fun main() {
-        while (true) {
-            println("enter the first no from which you want to subtract :~~")
-            val a = sc.nextInt().toFloat()
-            println("-")
-            val b = sc.nextInt().toFloat()
-            println("$a - $b is :~~")
-            val c = a - b
-            println("=   $c")
-            println("do you want to quit or you want to go to the menu(if yes enter 'y' else enter 'n' )" + "(for menu enter m)")
-            val dj = sc.next()
-            if (dj == "y") {
-                println("Bye :)")
-                break
-            } else if (dj == "n") {
-                println("welcome again :)")
-                continue
-            } else if (dj == "m") {
-                option.main()
-            } else {
-                println("invalid input")
-                println("try again!!")
-                break
             }
         }
     }
@@ -157,6 +127,39 @@ internal object plus{
         }
     }
 }
+
+
+internal object minus{
+    // Minus class numbers
+    fun main() {
+        while (true) {
+            println("enter the first no from which you want to subtract :~~")
+            val a = sc.nextInt().toFloat()
+            println("-")
+            val b = sc.nextInt().toFloat()
+            println("$a - $b is :~~")
+            val c = a - b
+            println("=   $c")
+            println("do you want to quit or you want to go to the menu(if yes enter 'y' else enter 'n' )" + "(for menu enter m)")
+            val dj = sc.next()
+            if (dj == "y") {
+                println("Bye :)")
+                break
+            } else if (dj == "n") {
+                println("welcome again :)")
+                continue
+            } else if (dj == "m") {
+                option.main()
+            } else {
+                println("invalid input")
+                println("try again!!")
+                break
+            }
+        }
+    }
+}
+
+
 
 internal object divide{
     // Class to divide numbers
@@ -218,21 +221,20 @@ internal object multiply{
     }
 }
 
-internal object factorial{
-    // Class to check factorial
+
+
+internal object evenOdd{
+    // Class to check even or odd
     fun main() {
         while (true) {
-            println("enter the number want to calculate the factorial of :~~")
-            val number = sc.next().toLong()
-            var fact = BigInteger("1")
-            var i: Long
-            i = 1
-            while (i <= number) {
-                fact = fact.multiply(BigInteger.valueOf(i))
-                i++
+            println("enter the number you want to check")
+            val a = sc.nextInt()
+            if (a % 2 == 0) {
+                println(a.toString() + " is even")
+            } else {
+                println(a.toString() + " is odd")
             }
-            println("The factorial of $number is :-  $fact")
-            println("do you want to quit or you want to go to the menu(if yes enter 'y' else enter 'n' )" + "( for menu enter m)")
+            println("do you want to quit or you want to go to the menu(if yes enter 'y' else enter 'n' )" + "(for menu enter m)")
             val dj = sc.next()
             if (dj == "y") {
                 println("Bye :)")
@@ -251,18 +253,21 @@ internal object factorial{
     }
 }
 
-internal object evenOdd{
-    // Class to check even or odd
+internal object factorial{
+    // Class to check factorial
     fun main() {
         while (true) {
-            println("enter the number you want to check")
-            val a = sc.nextInt()
-            if (a % 2 == 0) {
-                println(a.toString() + "is even")
-            } else {
-                println(a.toString() + "is odd")
+            println("enter the number want to calculate the factorial of :~~")
+            val number = sc.next().toLong()
+            var fact = BigInteger("1")
+            var i: Long
+            i = 1
+            while (i <= number) {
+                fact = fact.multiply(BigInteger.valueOf(i))
+                i++
             }
-            println("do you want to quit or you want to go to the menu(if yes enter 'y' else enter 'n' )" + "(for menu enter m)")
+            println("The factorial of $number is :-  $fact")
+            println("do you want to quit or you want to go to the menu(if yes enter 'y' else enter 'n' )" + "( for menu enter m)")
             val dj = sc.next()
             if (dj == "y") {
                 println("Bye :)")

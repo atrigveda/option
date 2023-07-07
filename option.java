@@ -2,10 +2,12 @@ import java.util.*;
 import java.math.*;
 
 class index {
+   
     public static Scanner sc = new Scanner(System.in);
+   
 }
 
-class option extends index {
+class option extends index{
     public static void main(String args[]) {
 
 
@@ -34,7 +36,14 @@ class option extends index {
         // Menu operations .
 
         while (true) {
-            if (i.equals("1")) {
+            if (i.equals("0")) {
+                System.out.println("Bye :)");
+                System.exit(0);
+                break;
+                
+
+
+            } else if (i.equals("1")) {
                 System.out.println("ok, good choice. Lets do some additions :)");
                 try {
                     sum.main();
@@ -73,10 +82,7 @@ class option extends index {
                 }
 
 
-            } else if (i.equals("0")) {
-                System.exit(0);
-                break;
-            } else if (i.equals("5")) {
+            }  else if (i.equals("5")) {
                 System.out.println("lets check even odd");
                 try {
                     evenOdd.main();
@@ -111,6 +117,46 @@ class option extends index {
 
 
 }
+class sum extends index {
+    // Class to add the numbers
+    public static void main() {
+        while (true) {
+            System.out.println("enter the first no you want to add billow :~~");
+            float a = sc.nextInt();
+            System.out.println("+");
+            float b = sc.nextInt();
+            System.out.println("The sum of" + a + "and" + b + " is :~~");
+            float c = a + b;
+            System.out.println("=   " + c);
+            System.out.println("do you want to quit or you want to go to the menu(if yes enter 'y' else enter 'n' )" + "(for menu enter m)");
+            String dj = sc.next();
+            if (dj.equals("y")) {
+                System.out.println("Bye :)");
+                System.exit(0);
+                break;
+                
+
+
+            } else if (dj.equals("n")) {
+                System.out.println("welcome again :)");
+                continue;
+            } else if (dj.equals("m")) {
+
+                option.main();
+
+
+            } else {
+
+                System.out.println("invalid input");
+                System.out.println("try again!!");
+                break;
+
+
+            }
+        }
+
+    }
+}
 
 
 class minus extends index {
@@ -127,6 +173,8 @@ class minus extends index {
             System.out.println("do you want to quit or you want to go to the menu(if yes enter 'y' else enter 'n' )" + "(for menu enter m)");
             String dj = sc.next();
             if (dj.equals("y")) {
+                System.out.println("Bye :)");
+                System.exit(0);
                 break;
 
 
@@ -156,43 +204,6 @@ class minus extends index {
 
 }
 
-class sum extends index {
-    // Class to add the numbers
-    public static void main() {
-        while (true) {
-            System.out.println("enter the first no you want to add billow :~~");
-            float a = sc.nextInt();
-            System.out.println("+");
-            float b = sc.nextInt();
-            System.out.println("The sum of" + a + "and" + b + " is :~~");
-            float c = a + b;
-            System.out.println("=   " + c);
-            System.out.println("do you want to quit or you want to go to the menu(if yes enter 'y' else enter 'n' )" + "(for menu enter m)");
-            String dj = sc.next();
-            if (dj.equals("y")) {
-                break;
-
-
-            } else if (dj.equals("n")) {
-                System.out.println("welcome again :)");
-                continue;
-            } else if (dj.equals("m")) {
-
-                option.main();
-
-
-            } else {
-
-                System.out.println("invalid input");
-                System.out.println("try again!!");
-                break;
-
-
-            }
-        }
-
-    }
-}
 
 class divide extends index {
     // Class to divide numbers
@@ -208,9 +219,11 @@ class divide extends index {
             System.out.println("do you want to quit or you want to go to the menu(if yes enter 'y' else enter 'n' )" + "( for menu enter m)");
             String dj = sc.next();
             if (dj.equals("y")) {
+                System.out.println("Bye :)");
+                System.exit(0);
                 break;
 
-
+            
             } else if (dj.equals("n")) {
                 System.out.println("welcome again :)");
                 continue;
@@ -247,6 +260,8 @@ class multiply extends index {
             System.out.println("do you want to quit or you want to go to the menu(if yes enter 'y' else enter 'n' )" + "( for menu enter m)");
             String dj = sc.next();
             if (dj.equals("y")) {
+                System.out.println("Bye :)");
+                System.exit(0);
                 break;
 
 
@@ -274,6 +289,51 @@ class multiply extends index {
     }
 
 
+}
+
+class evenOdd extends index {
+    // Class to check even or odd
+    public static void main() {
+
+        while (true) {
+            System.out.println("enter the number you want to check");
+            int a = sc.nextInt();
+            if (a % 2 == 0) {
+                System.out.println(a + " is even");
+            } else {
+                System.out.println(a + " is odd");
+            }
+
+            System.out.println("do you want to quit or you want to go to the menu(if yes enter 'y' else enter 'n' )" + "(for menu enter m)");
+            String dj = sc.next();
+            if (dj.equals("y")) {
+                System.out.println("Bye :)");
+                System.exit(0);
+                break;
+
+
+            } else if (dj.equals("n")) {
+
+                System.out.println("welcome again :)");
+                continue;
+            } else if (dj.equals("m")) {
+
+                option.main();
+
+
+            } else {
+
+                System.out.println("invalid input");
+                System.out.println("try again!!");
+                break;
+
+            }
+
+
+        }
+
+
+    }
 }
 
 class factorial extends index {
@@ -295,6 +355,8 @@ class factorial extends index {
             System.out.println("do you want to quit or you want to go to the menu(if yes enter 'y' else enter 'n' )" + "( for menu enter m)");
             String dj = sc.next();
             if (dj.equals("y")) {
+                System.out.println("Bye :)");
+                System.exit(0);
                 break;
 
 
@@ -323,47 +385,6 @@ class factorial extends index {
 }
 
 
-class evenOdd extends index {
-    // Class to check even or odd
-    public static void main() {
 
-        while (true) {
-            System.out.println("enter the number you want to check");
-            int a = sc.nextInt();
-            if (a % 2 == 0) {
-                System.out.println(a + "is even");
-            } else {
-                System.out.println(a + "is odd");
-            }
-
-            System.out.println("do you want to quit or you want to go to the menu(if yes enter 'y' else enter 'n' )" + "(for menu enter m)");
-            String dj = sc.next();
-            if (dj.equals("y")) {
-                break;
-
-
-            } else if (dj.equals("n")) {
-
-                System.out.println("welcome again :)");
-                continue;
-            } else if (dj.equals("m")) {
-
-                option.main();
-
-
-            } else {
-
-                System.out.println("invalid input");
-                System.out.println("try again!!");
-                break;
-
-            }
-
-
-        }
-
-
-    }
-}
 
 
