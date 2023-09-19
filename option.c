@@ -10,9 +10,18 @@ float scan(){
 
 char scanc(){
     char choice;
-    printf("Do you want to continue \n");
+    printf("Do you want to continue ? \n");
+    printf("---- ---- ---- ---- \n");
+    printf("y = Yes \n");
+    printf("n = Exit \n");
+    printf("m = Return to Menu \n");
+    printf("---- ---- ---- ---- \n");
     scanf(" %c", &choice);
     return choice;
+}
+
+char err(){
+  printf("Wrong Input :()\n Try again :) \n");
 }
 
 float plus(){
@@ -28,13 +37,8 @@ float plus(){
         return c;
 
         
+      }
 
-
-
-
-
-
-    }
 }
 
 float minus(){
@@ -50,13 +54,8 @@ float minus(){
         return c;
 
         
-
-
-
-
-
-
-    }
+        
+      }
 
 }
 
@@ -73,13 +72,8 @@ float divide(){
         return c;
 
         
+      }
 
-
-
-
-
-
-    }
 }
 
 float multiply(){
@@ -94,14 +88,39 @@ float multiply(){
         printf("Answer of ans is %g \n", c);
         return c;
 
-        
-
-
-
-
-
-
+      
     }
+
+}
+
+float evenodd(){
+  while(true){
+    
+     int n;
+     printf("Enter an integer: ");
+     scanf("%d", &n);
+     (n % 2 == 0) ? printf("%d is even. \n", n) : printf("%d is odd. \n", n);
+     return n;
+  }
+}
+
+float factorial(){
+  while(true){
+    int n, i;
+    unsigned long long fact = 1;
+    printf("Enter an integer: ");
+    scanf("%d", &n);
+    if (n < 0)
+        printf("Error! Factorial of a negative number doesn't exist. \n");
+    else {
+        for (i = 1; i <= n; ++i) {
+            fact *= i;
+        }
+        printf("Factorial of %d = %llu \n", n, fact);
+    }
+
+    return fact;
+  }
 }
 
 
@@ -130,9 +149,8 @@ int main(){
     while(true){
 
        if(choice == 0){
-        printf("0");
-         break;
-        continue;
+         printf("Bye :)");
+         exit(0);
        }
        if(choice == 1){
           while(true){
@@ -142,12 +160,16 @@ int main(){
               if(d == 'y'){
                 continue;
               }
-              if(d == 'm'){
-                options();
-              }
-              else{
+              if(d == 'n'){
                 printf("Bye :)");
                 exit(0);
+              }
+              if(d == 'm'){
+                main();
+              }
+              else{
+                err();
+                continue;
               }
             }
             
@@ -161,12 +183,18 @@ int main(){
               if(d == 'y'){
                 continue;
               }
-              else{
+              if(d == 'n'){
                 printf("Bye :)");
                 exit(0);
               }
+              if(d == 'm'){
+                main();
+              }
+              else{
+                err();
+                continue;
+              }
             }
-
         }
         if(choice == 3){
         while(true){
@@ -176,9 +204,16 @@ int main(){
               if(d == 'y'){
                 continue;
               }
-              else{
+              if(d == 'n'){
                 printf("Bye :)");
                 exit(0);
+              }
+              if(d == 'm'){
+                main();
+              }
+              else{
+                err();
+                continue;
               }
             }
 
@@ -191,38 +226,89 @@ int main(){
               if(d == 'y'){
                 continue;
               }
-              else{
+              if(d == 'n'){
                 printf("Bye :)");
                 exit(0);
               }
+              if(d == 'm'){
+                main();
+              }
+              else{
+                err();
+                continue;
+              }
             }
-
 
         }
         if(choice == 5){
-        printf("5");
-         break;
+        while(true){
+             evenodd();
+             char d;
+             d = scanc();
+              if(d == 'y'){
+                continue;
+              }
+              if(d == 'n'){
+                printf("Bye :)");
+                exit(0);
+              }
+              if(d == 'm'){
+                main();
+              }
+              else{
+                err();
+                continue;
+              }
+            }
 
         }
         if(choice == 6){
-        printf("6");
-         break;
+        while(true){
+             factorial();
+             char d;
+             d = scanc();
+              if(d == 'y'){
+                continue;
+              }
+              if(d == 'n'){
+                printf("Bye :)");
+                exit(0);
+              }
+              if(d == 'm'){
+                main();
+              }
+              else{
+                err();
+                continue;
+              }
+            }
 
         }
         else{
-        printf("Wrong Input :()\n Try again :) \n");
-         exit(0);
+         err();
+         while(true){
+             char d;
+             printf("Retry ? \n");
+             printf("--- --- \n");
+             printf("y = yes \n");
+             printf("n = no \n");
+             printf("--- --- \n");
+             scanf(" %c", &d);
+             d = scanc();
+              if(d == 'y'){
+                main();
+              }
+              if(d == 'n'){
+                printf("Bye :)");
+                exit(0);
+              }
+              else{
+                err();
+                continue;
+              }
+            }
 
         }
     }
 
-
-    
-
-
-
-
-
-
-    
 }
